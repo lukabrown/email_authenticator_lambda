@@ -21,7 +21,7 @@ def lambda_handler(event, context):
         print('ERROR: turnstile validation failed', response.get('error-codes', []))
         return generateDeny(event['methodArn'])
 
-    if response['hostname'] != "luka-brown.com":
+    if response['hostname'] != "www.luka-brown.com":
         print('ERROR: invalid hostname in turnstile response', response['hostname'])
         return generateDeny(event['methodArn'])
 
